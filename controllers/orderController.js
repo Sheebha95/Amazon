@@ -22,7 +22,8 @@ const createOrder = async (req, res) => {
     address: req.body.address,
     paymentMode: req.body.paymentMode,
     deliveryDays: req.body.deliveryDays,
-    orderStatus: req.body.orderStatus
+    orderStatus: req.body.orderStatus,
+    returnPolicy: req.body.returnPolicy
   });
   try {
     const newOrder = await order.save();
@@ -42,7 +43,7 @@ const updateOrder = async (req, res) => {
 const deleteOrder = async (req, res) => {
   try {
     await Order.findByIdAndDelete(req.params.id);
-    res.json({ message: 'Product deleted' });
+    res.json({ message: 'Order deleted' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

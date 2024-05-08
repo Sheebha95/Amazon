@@ -38,7 +38,7 @@ const updateCustomer = async (req, res) => {
 const deleteCustomer = async (req, res) => {
   try {
     await customer.findByIdAndDelete(req.params.id);
-    res.json({ message: 'Product deleted' });
+    res.json({ message: 'Customer deleted' });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }

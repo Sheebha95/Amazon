@@ -8,6 +8,7 @@ const productRoutes = require("./routes/productRoutes");
 const sellerRoutes = require("./routes/sellerRoutes");
 const customerRoutes = require("./routes/customerRoutes");
 const orderRoutes = require("./routes/orderRoutes");
+const cartRoutes = require("./routes/cartRoutes");
 
 const app = express();
 app.use(cors());
@@ -33,6 +34,7 @@ app.get("/", async (req, res) => {
   app.use("/api/sellers", sellerRoutes);
   app.use("/api/customers", customerRoutes);
   app.use("/api/orders", orderRoutes);
+  app.use("/api/items", cartRoutes);
 
   app.listen(config.port, () => {
     console.log(`Server is running on port ${config.port}`);

@@ -12,7 +12,8 @@ const orderSchema = new mongoose.Schema({
     address: String,
     paymentMode: String,
     deliveryDays: String,
-    orderStatus: String
+    orderStatus: String,
+    returnPolicy: String
 });
 
 module.exports = mongoose.model("OrderDetails", orderSchema);
